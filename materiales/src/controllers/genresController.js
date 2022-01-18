@@ -7,5 +7,6 @@ module.exports = {
             res.render('genresList', { 
                 genres }) 
             }) 
-    .catch(error => console.log(error)) } 
+    .catch(error => console.log(error)) 
+} 
 }
