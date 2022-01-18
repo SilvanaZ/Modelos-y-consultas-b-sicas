@@ -8,5 +8,13 @@ module.exports = {
                 genres }) 
             }) 
     .catch(error => console.log(error)) 
+},
+detail: (req, res)=>{
+    db.genre.findByPk(req.params.id)
+    .then((genre)){
+        where: {
+            id: req.params.id
+        }
+    }
 } 
 }
