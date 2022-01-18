@@ -21,5 +21,18 @@ modules.exports = {
                 movies 
             }) 
         }) 
-    }
+    },
+    recomended: (req, res) => { 
+        db.Movie.findAll({ 
+            where: { 
+                rating: {[Op.gte] : 8}, 
+            }, 
+            order: [['release_date', 'DESC']], limit: 5 
+        }) 
+        .then((movies) => { 
+            res.render('recommendedMovies', {
+                 movies 
+                }) 
+            }) 
+        } 
 }
